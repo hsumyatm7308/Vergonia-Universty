@@ -1,0 +1,44 @@
+:root {
+    --primary-color: darkviolet;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* start header section  */
+
+
+/* start intro   */
+
+.headerintros {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 25px 0;
+    /* display: none; */
+}
+
+@media(min-width: 1200px) {
+    .visiblelgs {
+        display: block;
+    }
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.headericons a {
+    color: #fff;
+    margin: 0 10px;
+}
