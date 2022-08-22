@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
 :root {
     --primary-color: darkviolet;
+    --primary-grad-color: linear-gradient(to left, darkviolet, deepskyblue);
 }
 
 * {
@@ -9,6 +11,8 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 
@@ -21,7 +25,7 @@ body {
     background-color: var(--primary-color);
     color: #fff;
     padding: 25px 0;
-    /* display: none; */
+    display: none;
 }
 
 @media(min-width: 1200px) {
@@ -42,3 +46,71 @@ body {
     color: #fff;
     margin: 0 10px;
 }
+
+
+/* end header intor  */
+
+header {
+    height: 80vh;
+    background: var(--primary-grad-color);
+}
+
+.menustyle li a {
+    color: #000;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    transition: color .5s;
+}
+
+.menustyle li a:hover {
+    color: var(--primary-color);
+}
+
+.navbuttons {
+    border: none;
+}
+
+.navbuttons:focus {
+    /* border: none; */
+    box-shadow: none;
+}
+
+.lines1,
+.lines2,
+.lines3 {
+    width: 17px;
+    height: 2px;
+    margin: 3px;
+}
+
+.crossxs .lines1 {
+    transform: rotate(-45deg) translate(-3px, 4px);
+}
+
+.crossxs .lines2 {
+    opacity: 0;
+}
+
+.crossxs .lines3 {
+    transform: rotate(45deg) translate(-3px, -4px);
+}
+
+
+/* end nav  */
+
+
+/* start Banner  */
+
+.banners {
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* end banner  */
+
+
+/* End Header Section  */
