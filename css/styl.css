@@ -352,3 +352,24 @@ header{
     color: #fff;
 }
 /* end location */
+
+/* start features section  */
+.features{
+    background-color: var(--secondary-color);
+
+}
+
+.feas img{
+    transform:rotateY(0) scale(0.5);
+
+    transition: transform .5s;
+}
+
+.feas:hover img{
+    transform: rotateY(360deg) scale(1);
+}
+
+.feas p{
+    font-size: 12px;
+}
+/* end features section  */
