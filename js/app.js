@@ -1,70 +1,76 @@
-/// Start  jQuery Area
-$(document).ready(function() {
+// Start Jquery Area
 
-    // Start Header
-    // Start Nav Bar
-    $('.navbuttons').click(function() {
-            $(this).toggleClass('crossxs');
-        })
-        // End Nav Bar
-        // Start Header
+$(document).ready(function () {
+  // Start Header
+  // Start Nav Bar
+  $('.navbuttons').click(function () {
+    $(this).toggleClass('crossxs');
+  });
+  // End Nav Bar
+  // End Header
 
+  // Start Login Box
+  $('#openform').click(function () {
+    document.getElementById('form-popup').style.display = 'block';
+  });
+
+  $('#formclose-btn').click(function () {
+    document.getElementById('form-popup').style.display = 'none';
+  });
+  // End Login Box
 });
-// End  jQuery Area
 
+// End Jquery Area
 
 // Start Javascript Area
+// Start Counter Section
+var getcountervalues = document.querySelectorAll('.countervalues');
+getcountervalues.forEach(function (getcountervalue) {
+  // console.log(getcountervalue);
 
-// start student counter section 
+  getcountervalue.textContent = '0';
 
-var getcountervalues = document.querySelectorAll(".countervalues");
-// console.log(getcountervalues) //Note List 
-getcountervalues.forEach(function(getcountervalue) {
-    getcountervalue.textContent = 0;
+  const updatecounter = function () {
+    // console.log("i am working");
 
-    const updatecounter = function() {
-        // console.log("i am working")
-        const getcttarget = +getcountervalue.getAttribute('data-target')
-            // console.log(getcttarget) 
-            // console.log(typeof getcttarget)
+    const getcttarget = +getcountervalue.getAttribute('data-target');
+    // console.log(getcttarget);
+    // console.log(typeof getcttarget, getcttarget);
 
-        const getctcontent = +getcountervalue.innerText;
-        // console.log(getctcontent)
-        // console.log(typeof getctcontent)
+    const getctcontent = +getcountervalue.innerText;
+    // console.log(typeof getctcontent);
 
-        const incnumber = getcttarget / 100;
-        console.log(incnumber)
-        if (getctcontent < getcttarget) {
-            getcountervalue.textContent = getctcontent + incnumber;
+    const incnumber = getcttarget / 100;
+    // console.log(incnumber);
 
-            setTimeout(updatecounter, 100);
-        }
-
-
+    if (getctcontent < getcttarget) {
+      getcountervalue.textContent = getctcontent + incnumber;
+      setTimeout(updatecounter, 50);
     }
-    updatecounter();
-})
+  };
 
-// end student counter section 
+  updatecounter();
+});
+// End Counter Section
 
 // Start Rating Section
 
 // start google code for chart
-google.charts.load("current", { packages: ["corechart"] });
+google.charts.load('current', { packages: ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
-    ["Task", "Hours per Day"],
-    ["Myanmar", 8],
-    ["Thailand", 2],
-    ["Signapore", 4],
-    ["Indonesia", 2],
-    ["Srilanka", 8],
+    ['Task', 'Hours per Day'],
+    ['Myanmar', 8],
+    ['Thailand', 2],
+    ['Signapore', 4],
+    ['Indonesia', 2],
+    ['Srilanka', 8],
   ]);
 
   var options = {
-    title: "International Students",
+    title: 'International Students',
     // is3D: true,
     // pieHole: 0.2,
     width: 550,
@@ -72,7 +78,7 @@ function drawChart() {
   };
 
   var chart = new google.visualization.PieChart(
-    document.getElementById("piechart")
+    document.getElementById('piechart')
   );
 
   chart.draw(data, options);
@@ -81,6 +87,8 @@ function drawChart() {
 // end google code for chart
 // End Rating Section
 
+const getyear = document.getElementById('getyear');
+const getfullyear = new Date().getUTCFullYear();
+getyear.textContent = getfullyear;
 
-//End Javascript area
-// 25CT
+// End Javascript Area
